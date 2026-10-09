@@ -1,21 +1,17 @@
 import unittest
-
 from result_logic import predict_result
 
 
 class TestResultLogic(unittest.TestCase):
 
-    def test_pass_case(self):
-        result = predict_result(70, 85)
-        self.assertEqual(result, "PASS")
+    def test_pass_result(self):
+        self.assertEqual(predict_result(70, 85), "PASS")
 
-    def test_fail_due_to_marks(self):
-        result = predict_result(30, 85)
-        self.assertEqual(result, "FAIL")
+    def test_fail_low_marks(self):
+        self.assertEqual(predict_result(30, 85), "FAIL")
 
-    def test_fail_due_to_attendance(self):
-        result = predict_result(70, 60)
-        self.assertEqual(result, "FAIL")
+    def test_fail_low_attendance(self):
+        self.assertEqual(predict_result(70, 60), "FAIL")
 
 
 if __name__ == "__main__":
