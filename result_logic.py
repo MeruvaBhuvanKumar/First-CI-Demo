@@ -1,10 +1,14 @@
 def predict_result(internal_marks, attendance):
     if internal_marks >= 40 and attendance >= 75:
         return "PASS"
-    else:
-        return "FAIL"
+    return "FAIL"
 
 
 if __name__ == "__main__":
-    result = predict_result(70, 85)
+    marks = 70
+    attendance = 85
+
+    result = predict_result(marks, attendance)
+    print("Internal Marks:", marks)
+    print("Attendance:", attendance)
     print("Predicted Result:", result)
